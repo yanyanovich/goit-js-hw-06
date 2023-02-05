@@ -5,8 +5,10 @@ form.addEventListener("submit", (e) => {
   const {
     elements: { email, password },
   } = e.currentTarget;
-  if (email.value === "" || password.value === "")
+  if (email.value === "" || password.value === "") {
     alert("Всі поля повинні бути заповнені");
+    return;
+  }
   console.log(`Login: ${email.value}, Password: ${password.value}`);
   e.currentTarget.reset();
 });
